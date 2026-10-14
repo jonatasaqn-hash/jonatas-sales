@@ -5,6 +5,23 @@
 header .nav a.logo-header .header-logo-title{color:#ff641c!important;-webkit-text-fill-color:#ff641c!important}
 header .nav a.logo-header .header-logo-sub{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important}
 header .nav a.logo-header .header-logo-sub i{background-color:#ffffff!important}
+/* Mobile viewport fix: prevent horizontal overflow and clipped hero text */
+html,body{max-width:100%;overflow-x:clip}
+.hero,.hero-inner,.hero-copy{min-width:0}
+.hero h1{overflow-wrap:normal}
+@media(max-width:600px){
+ .wrap{width:calc(100% - 36px)}
+ .hero-inner{min-height:0;padding:48px 0 110px;align-items:flex-start}
+ .hero-copy{width:100%;max-width:100%}
+ .hero h1{font-size:clamp(39px,10.5vw,62px);line-height:1.03;letter-spacing:-.02em;margin:16px 0 22px;overflow-wrap:break-word}
+ .hero p{font-size:15px;line-height:1.65;max-width:100%}
+ .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+ .hero-actions .btn{width:100%;max-width:100%;white-space:normal;text-align:center;padding:15px 12px}
+ .hero-bottom{bottom:18px}
+ .hero-bottom .wrap{gap:8px 14px;line-height:1.5}
+ .hero:after{font-size:85vw;right:-12%;top:0}
+}
+@media(max-width:370px){.hero h1{font-size:clamp(34px,10vw,39px)}}
 </style></head><body>
 <header><div class="wrap nav"><a class="logo logo-header" href="#inicio" aria-label="Jônatas Sales Personal Trainer — início"><span class="header-logo-title">JÔNATAS SALES</span><span class="header-logo-sub"><i></i>PERSONAL TRAINER<i></i></span></a><nav class="navlinks" aria-label="Menu"><a href="#servicos">Serviços</a><a href="#metodo">Como funciona</a><a href="#perguntas">Dúvidas</a><a href="https://www.instagram.com/jonatastrainer_/" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://wa.me/5511932184377?text=Ol%C3%A1%2C%20J%C3%B4natas!%20Quero%20conhecer%20seus%20servi%C3%A7os." target="_blank" rel="noopener">Fale comigo ↗</a></nav></div></header>
 <main><section class="hero" id="inicio"><div class="wrap hero-inner"><div class="hero-copy"><h1>MAIS QUE TREINO,<br><em>TRANSFORMAÇÃO.</em></h1><p>Treinamento pensado para sua realidade, seus objetivos e sua evolução. Chega de treinar sem direção. Comece com um plano feito para você.</p><div class="hero-actions"><a class="btn" href="#servicos">Conheça os serviços ↗</a><a class="btn outline" href="https://wa.me/5511932184377" target="_blank" rel="noopener">Conversar no WhatsApp</a></div></div></div><div class="hero-bottom"><div class="wrap"><span>01 / Individualidade</span><span>02 / Estratégia</span><span>03 / Constância</span></div></div></section>
