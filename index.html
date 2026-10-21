@@ -175,6 +175,36 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
 .sobre-slide.sobre-novo:nth-child(3)::before{background-image:url("academia-slide-03.jpg.jpg")!important;background-size:cover!important;background-position:center 45%!important;filter:brightness(.88) contrast(1.08) saturate(.88)!important}
 .sobre-slide.sobre-novo:nth-child(3)::after{background:linear-gradient(90deg,rgba(0,0,0,.83) 0%,rgba(0,0,0,.68) 54%,rgba(0,0,0,.36) 100%),linear-gradient(0deg,rgba(0,0,0,.48),transparent 75%)!important}
 @media(max-width:700px){.sobre-slide.sobre-novo:nth-child(3)::before{background-position:center 42%!important;filter:brightness(.8) contrast(1.08) saturate(.85)!important}.sobre-slide.sobre-novo:nth-child(3)::after{background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.52)),linear-gradient(0deg,rgba(0,0,0,.4),transparent)!important}}
+
+/* Ajuste responsivo do primeiro slide Quem Sou Eu: fotografia permanece como fundo */
+@media(max-width:700px){
+ .sobre-slide.sobre-novo:first-child{
+   min-height:0!important;
+   height:auto!important;
+   padding:28px 22px 38px!important;
+   display:flex!important;
+   flex-direction:column!important;
+   justify-content:flex-start!important;
+   gap:clamp(250px,67vw,390px)!important;
+ }
+ .sobre-slide.sobre-novo:first-child::before{
+   background-size:cover!important;
+   background-position:center 25%!important;
+   filter:none!important;
+ }
+ .sobre-slide.sobre-novo:first-child::after{
+   background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.04) 25%,rgba(0,0,0,.42) 48%,rgba(0,0,0,.92) 73%,rgba(0,0,0,.97) 100%)!important;
+ }
+ .sobre-slide.sobre-novo:first-child .sobre-novo-content{
+   padding:0!important;
+   margin:0!important;
+   width:100%;
+ }
+ .sobre-slide.sobre-novo:first-child h3{
+   font-size:clamp(42px,11vw,62px)!important;
+   line-height:1!important;
+ }
+}
 </style></head><body>
 <header><div class="wrap nav"><a class="logo logo-header" href="#inicio" aria-label="Jônatas Sales Personal Trainer — início"><span class="header-logo-title">JÔNATAS SALES</span><span class="header-logo-sub"><i></i>PERSONAL TRAINER<i></i></span></a><nav class="navlinks" aria-label="Menu"><a href="#servicos">Serviços</a><a href="#metodo">Como funciona</a><a href="#perguntas">Dúvidas</a><a href="https://www.instagram.com/jonatastrainer_/" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://wa.me/5511932184377?text=Ol%C3%A1%2C%20J%C3%B4natas!%20Quero%20conhecer%20seus%20servi%C3%A7os." target="_blank" rel="noopener">Fale comigo ↗</a></nav></div></header>
 <main><section class="hero" id="inicio"><div class="wrap hero-inner"><div class="hero-copy"><h1>MAIS QUE TREINO,<br><em>TRANSFORMAÇÃO.</em></h1><p>Aqui o treino é baseado em ciência, estratégia e individualidade. Cada treino é planejado de forma única, respeitando seu corpo, seus objetivos e sua rotina. Aqui você não encontra uma fórmula pronta, aqui você encontra um treino individualizado que vai otimizar seus resultados com eficiência, segurança e constância.</p><div class="hero-actions"><a class="btn outline" href="#sobre-jonatas">Quem é Jônatas Sales ↗</a><a class="btn" href="#planos-online">Planos on-line ↗</a><a class="btn" href="#plano-hibrido">Plano híbrido ↗</a><a class="btn" href="#presencial-individual">Planos presenciais ↗</a><a class="btn outline" href="https://wa.me/5511932184377" target="_blank" rel="noopener">Conversar no WhatsApp ↗</a></div></div></div></section>
