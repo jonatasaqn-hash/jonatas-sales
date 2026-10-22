@@ -265,8 +265,11 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
  }
 }
 
-/* Slide 01 mobile: fade no limite real da fotografia, sem corte brusco */
+/* Slide 01 mobile: fundo preto uniforme igual ao slide 03 */
 @media(max-width:700px){
+ .sobre-slide.sobre-novo:first-child{
+   background:#101010!important;
+ }
  .sobre-slide.sobre-novo:first-child::before{
    height:calc((100vw - 68px) * 1.02)!important;
    bottom:auto!important;
@@ -274,13 +277,13 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
    background-position:center top!important;
    background-repeat:no-repeat!important;
    background-color:transparent!important;
-   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 55%,rgba(0,0,0,.95) 65%,rgba(0,0,0,.65) 76%,rgba(0,0,0,.25) 88%,transparent 100%)!important;
-   mask-image:linear-gradient(to bottom,#000 0%,#000 55%,rgba(0,0,0,.95) 65%,rgba(0,0,0,.65) 76%,rgba(0,0,0,.25) 88%,transparent 100%)!important;
+   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 48%,rgba(0,0,0,.92) 60%,rgba(0,0,0,.5) 76%,transparent 94%)!important;
+   mask-image:linear-gradient(to bottom,#000 0%,#000 48%,rgba(0,0,0,.92) 60%,rgba(0,0,0,.5) 76%,transparent 94%)!important;
  }
  .sobre-slide.sobre-novo:first-child::after{
    height:calc((100vw - 68px) * 1.02)!important;
    bottom:auto!important;
-   background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.04) 48%,rgba(0,0,0,.12) 57%,rgba(0,0,0,.45) 73%,rgba(0,0,0,.83) 88%,#101010 100%)!important;
+   background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.06) 45%,rgba(0,0,0,.28) 62%,rgba(0,0,0,.75) 82%,#101010 100%)!important;
  }
 }
 </style></head><body>
