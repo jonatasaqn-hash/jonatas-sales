@@ -265,19 +265,22 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
  }
 }
 
-/* Transição suave da fotografia para o fundo preto no slide 01 mobile */
+/* Slide 01: foto permanece visível até a descrição, depois dissolve no preto */
 @media(max-width:700px){
  .sobre-slide.sobre-novo:first-child::before{
-   height:calc((100vw - 68px) * .70)!important;
+   height:calc((100vw - 68px) * 1.02)!important;
    bottom:auto!important;
+   background-size:145% auto!important;
+   background-position:center top!important;
+   background-repeat:no-repeat!important;
    background-color:transparent!important;
-   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 58%,rgba(0,0,0,.85) 70%,rgba(0,0,0,.35) 86%,transparent 100%)!important;
-   mask-image:linear-gradient(to bottom,#000 0%,#000 58%,rgba(0,0,0,.85) 70%,rgba(0,0,0,.35) 86%,transparent 100%)!important;
+   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 67%,rgba(0,0,0,.92) 77%,rgba(0,0,0,.50) 89%,transparent 100%)!important;
+   mask-image:linear-gradient(to bottom,#000 0%,#000 67%,rgba(0,0,0,.92) 77%,rgba(0,0,0,.50) 89%,transparent 100%)!important;
  }
  .sobre-slide.sobre-novo:first-child::after{
-   height:calc((100vw - 68px) * .70)!important;
+   height:calc((100vw - 68px) * 1.02)!important;
    bottom:auto!important;
-   background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.04) 35%,rgba(0,0,0,.22) 60%,rgba(0,0,0,.72) 82%,#101010 100%)!important;
+   background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.03) 55%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.58) 88%,#101010 100%)!important;
  }
 }
 </style></head><body>
