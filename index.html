@@ -268,11 +268,16 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
 /* Transição suave da fotografia para o fundo preto no slide 01 mobile */
 @media(max-width:700px){
  .sobre-slide.sobre-novo:first-child::before{
-   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 48%,rgba(0,0,0,.85) 63%,transparent 83%)!important;
-   mask-image:linear-gradient(to bottom,#000 0%,#000 48%,rgba(0,0,0,.85) 63%,transparent 83%)!important;
+   height:calc((100vw - 68px) * .70)!important;
+   bottom:auto!important;
+   background-color:transparent!important;
+   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 58%,rgba(0,0,0,.85) 70%,rgba(0,0,0,.35) 86%,transparent 100%)!important;
+   mask-image:linear-gradient(to bottom,#000 0%,#000 58%,rgba(0,0,0,.85) 70%,rgba(0,0,0,.35) 86%,transparent 100%)!important;
  }
  .sobre-slide.sobre-novo:first-child::after{
-   background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.05) 24%,rgba(0,0,0,.15) 37%,rgba(0,0,0,.72) 52%,#101010 72%)!important;
+   height:calc((100vw - 68px) * .70)!important;
+   bottom:auto!important;
+   background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.04) 35%,rgba(0,0,0,.22) 60%,rgba(0,0,0,.72) 82%,#101010 100%)!important;
  }
 }
 </style></head><body>
