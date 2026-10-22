@@ -264,6 +264,17 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
    margin-bottom:170px!important;
  }
 }
+
+/* Transição suave da fotografia para o fundo preto no slide 01 mobile */
+@media(max-width:700px){
+ .sobre-slide.sobre-novo:first-child::before{
+   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 48%,rgba(0,0,0,.85) 63%,transparent 83%)!important;
+   mask-image:linear-gradient(to bottom,#000 0%,#000 48%,rgba(0,0,0,.85) 63%,transparent 83%)!important;
+ }
+ .sobre-slide.sobre-novo:first-child::after{
+   background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.05) 24%,rgba(0,0,0,.15) 37%,rgba(0,0,0,.72) 52%,#101010 72%)!important;
+ }
+}
 </style></head><body>
 <header><div class="wrap nav"><a class="logo logo-header" href="#inicio" aria-label="Jônatas Sales Personal Trainer — início"><span class="header-logo-title">JÔNATAS SALES</span><span class="header-logo-sub"><i></i>PERSONAL TRAINER<i></i></span></a><nav class="navlinks" aria-label="Menu"><a href="#servicos">Serviços</a><a href="#metodo">Como funciona</a><a href="#perguntas">Dúvidas</a><a href="https://www.instagram.com/jonatastrainer_/" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://wa.me/5511932184377?text=Ol%C3%A1%2C%20J%C3%B4natas!%20Quero%20conhecer%20seus%20servi%C3%A7os." target="_blank" rel="noopener">Fale comigo ↗</a></nav></div></header>
 <main><section class="hero" id="inicio"><div class="wrap hero-inner"><div class="hero-copy"><h1>MAIS QUE TREINO,<br><em>TRANSFORMAÇÃO.</em></h1><p>Aqui o treino é baseado em ciência, estratégia e individualidade. Cada treino é planejado de forma única, respeitando seu corpo, seus objetivos e sua rotina. Aqui você não encontra uma fórmula pronta, aqui você encontra um treino individualizado que vai otimizar seus resultados com eficiência, segurança e constância.</p><div class="hero-actions"><a class="btn outline" href="#sobre-jonatas">Quem é Jônatas Sales ↗</a><a class="btn" href="#planos-online">Planos on-line ↗</a><a class="btn" href="#plano-hibrido">Plano híbrido ↗</a><a class="btn" href="#presencial-individual">Planos presenciais ↗</a><a class="btn outline" href="https://wa.me/5511932184377" target="_blank" rel="noopener">Conversar no WhatsApp ↗</a></div></div></div></section>
