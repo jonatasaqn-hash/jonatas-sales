@@ -208,13 +208,20 @@ footer .footer-mark svg{height:100%!important;width:100%!important}
  }
 }
 
-/* Primeiro slide mobile: título sobre a parte inferior da fotografia */
+/* Primeiro slide mobile: título na foto e texto logo abaixo, sem vazio */
 @media(max-width:700px){
+ .sobre-slide.sobre-novo:first-child .sobre-novo-content{
+   margin-top:-300px!important;
+   margin-bottom:-300px!important;
+ }
  .sobre-slide.sobre-novo:first-child .sobre-novo-content h3,
  .sobre-slide.sobre-novo:first-child .sobre-novo-content .sobre-barra{
    position:relative;
-   top:-155px;
+   top:145px;
    z-index:2;
+ }
+ .sobre-slide.sobre-novo:first-child .sobre-novo-content .sobre-barra{
+   margin-bottom:175px!important;
  }
 }
 </style></head><body>
