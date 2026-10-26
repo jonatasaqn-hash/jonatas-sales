@@ -58,10 +58,10 @@ const modelImage=new Image();modelImage.src='Guia Neon de Posturas Corporais.png
 function modelCrop(gender,i){
 /* Isola a silhueta laranja do guia, sem cortar a cabeça, os braços ou os pés. */
 const xs=[30,300,575,850,1125,1400],y=gender==='Feminina'?72:548;
-const src=document.createElement('canvas');src.width=226;src.height=305;
+const src=document.createElement('canvas');src.width=226;src.height=405;
 const sc=src.getContext('2d',{willReadFrequently:true});
-sc.drawImage(modelImage,xs[i],y,226,305,0,0,226,305);
-const raw=sc.getImageData(0,0,226,305),d=raw.data,w=226,h=305;
+sc.drawImage(modelImage,xs[i],y-75,226,405,0,0,226,405);
+const raw=sc.getImageData(0,0,226,405),d=raw.data,w=226,h=405;
 const orange=new Uint8Array(w*h);
 for(let p=0;p<w*h;p++){const k=p*4,R=d[k],G=d[k+1],B=d[k+2];if(R>90&&R>G*1.32&&G>B*1.25&&R-B>65)orange[p]=1;}
 const seen=new Uint8Array(w*h),components=[];
@@ -72,7 +72,7 @@ components.push({pts,minX,maxX,minY,maxY});}
 components.sort((a,b)=>b.pts.length-a.pts.length);
 const body=components.find(c=>c.maxY-c.minY>110&&c.pts.length>100)||components[0];
 if(!body)return src.toDataURL('image/png');
-const x0=Math.max(0,body.minX-9),x1=Math.min(w-1,body.maxX+9),y0=Math.max(0,body.minY-9),y1=Math.min(h-1,body.maxY+9);
+const x0=Math.max(0,body.minX-14),x1=Math.min(w-1,body.maxX+14),y0=Math.max(0,body.minY-18),y1=Math.min(h-1,body.maxY+18);
 const mask=new Uint8Array(w*h);
 for(const c of components){if(c===body||(c.pts.length>15&&c.minX>=x0&&c.maxX<=x1&&c.minY>=y0&&c.maxY<=y1))for(const p of c.pts)mask[p]=1;}
 /* Recupera pixels suavizados adjacentes aos traços do corpo. */
@@ -81,7 +81,7 @@ ctx.fillStyle='#121212';ctx.fillRect(0,0,226,305);
 const out=ctx.getImageData(0,0,w,h);
 for(let yy=y0;yy<=y1;yy++)for(let x=x0;x<=x1;x++){const p=yy*w+x,k=p*4;let near=mask[p];if(!near)for(let dy=-2;dy<=2&&!near;dy++)for(let dx=-2;dx<=2;dx++){const nx=x+dx,ny=yy+dy;if(nx>=0&&ny>=0&&nx<w&&ny<h&&mask[ny*w+nx]){near=1;break;}}if(near){const R=d[k],G=d[k+1],B=d[k+2];if(R>42&&R>G*1.15&&R>B*1.5){out.data[k]=R;out.data[k+1]=G;out.data[k+2]=B;out.data[k+3]=255;}}}
 const layer=document.createElement('canvas');layer.width=w;layer.height=h;layer.getContext('2d').putImageData(out,0,0);
-const bw=x1-x0+1,bh=y1-y0+1,scale=Math.min(184/bw,267/bh,1.35);
+const bw=x1-x0+1,bh=y1-y0+1,scale=Math.min(182/bw,255/bh,1.15);
 const dw=bw*scale,dh=bh*scale;
 ctx.drawImage(layer,x0,y0,bw,bh,(226-dw)/2,(305-dh)/2,dw,dh);
 return canvas.toDataURL('image/png');
