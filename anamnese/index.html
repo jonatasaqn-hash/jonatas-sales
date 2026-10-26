@@ -60,7 +60,7 @@ function modelCrop(gender,i){
 const xs=[30,300,575,850,1125,1400],y=gender==='Feminina'?72:548;
 const src=document.createElement('canvas');src.width=226;src.height=405;
 const sc=src.getContext('2d',{willReadFrequently:true});
-sc.drawImage(modelImage,xs[i],y-75,226,405,0,0,226,405);
+sc.drawImage(modelImage,xs[i]-(gender==='Masculina'&&(i===4||i===5)?18:0),y-75,226,405,0,0,226,405);
 const raw=sc.getImageData(0,0,226,405),d=raw.data,w=226,h=405;
 const orange=new Uint8Array(w*h);
 for(let p=0;p<w*h;p++){const k=p*4,R=d[k],G=d[k+1],B=d[k+2];if(R>90&&R>G*1.32&&G>B*1.25&&R-B>65)orange[p]=1;}
@@ -75,7 +75,7 @@ if(!body)return src.toDataURL('image/png');
 const fixArms=(gender==='Feminina'&&i===5)||(gender==='Masculina'&&(i===4||i===5));
 const x0=Math.max(0,body.minX-(fixArms?32:14)),x1=Math.min(w-1,body.maxX+(fixArms?32:14)),y0=Math.max(0,body.minY-(fixArms?30:18)),y1=Math.min(h-1,body.maxY+18);
 const mask=new Uint8Array(w*h);
-for(const c of components){if(c===body||(c.pts.length>(fixArms?1:15)&&c.minX>=x0&&c.maxX<=x1&&c.minY>=y0&&c.maxY<=y1))for(const p of c.pts)mask[p]=1;}
+for(const c of components){if(c===body||(c.pts.length>(fixArms?1:15)&&c.minX>=Math.max(x0,body.minX-15)&&c.maxX<=Math.min(x1,body.maxX+15)&&c.minY>=y0&&c.maxY<=y1))for(const p of c.pts)mask[p]=1;}
 /* Recupera pixels suavizados adjacentes aos traços do corpo. */
 const canvas=document.createElement('canvas');canvas.width=226;canvas.height=305;const ctx=canvas.getContext('2d');
 ctx.fillStyle='#121212';ctx.fillRect(0,0,226,305);
