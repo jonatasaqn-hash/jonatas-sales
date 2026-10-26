@@ -1,0 +1,27 @@
+name: Publicar anamnese na Hostinger
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'anamnese/**'
+      - '.github/workflows/deploy-anamnese.yml'
+  workflow_dispatch:
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter arquivos
+        uses: actions/checkout@v4
+      - name: Publicar pasta anamnese via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./anamnese/
+          server-dir: /public_html/anamnese/
+          dangerous-clean-slate: false
